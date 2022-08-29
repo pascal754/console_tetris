@@ -39,11 +39,6 @@ void TetrominoS::draw()
 	printShape("S");
 }
 
-void TetrominoS::erase()
-{
-	printShape(" ");
-}
-
 // 1. test collision
 // 2. erase the current shape, set roatation state, and redraw
 void TetrominoS::rotate(const Grid& g)
@@ -71,73 +66,6 @@ void TetrominoS::rotate(const Grid& g)
 	if ((temp.y + temp.height > wallHeight) || !temp.isClear(g))
 		return;
 
-	erase();
-	*this = temp;
-	draw();
-}
-
-void TetrominoS::moveLeft(const Grid& g)
-{
-	if (x == 1) // nothing to do
-		return;
-
-	TetrominoS temp{ *this };
-	--temp.x;
-	if (!temp.isClear(g))
-	{
-		return;
-	}
-
-	erase();
-	--x;
-	draw();
-}
-
-void TetrominoS::moveRight(const Grid& g)
-{
-	if (isEndofRight()) // nothing to do
-		return;
-
-	TetrominoS temp{ *this };
-	++temp.x;
-
-	if (!temp.isClear(g))
-	{
-		return;
-	}
-
-	erase();
-	++x;
-	draw();
-}
-
-bool TetrominoS::moveDown(const Grid& g)
-{
-	TetrominoS temp{ *this };
-	++temp.y;
-
-	if ((temp.y + temp.height > wallHeight) || !temp.isClear(g))
-	{
-		return false;
-	}
-
-	erase();
-	++y;
-	draw();
-
-	return true;
-}
-
-
-void TetrominoS::drop(const Grid& g)
-{
-	TetrominoS temp{ *this };
-
-	for (++temp.y; (temp.y <= wallHeight - height) && temp.isClear(g); ++temp.y)
-	{
-		//step down until the grid is clear for current position
-	}
-	--temp.y;
 	erase();
 	*this = temp;
 	draw();

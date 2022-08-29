@@ -10,12 +10,12 @@ export class Tetromino
 public:
 	virtual ~Tetromino() = default;
 	virtual void draw() = 0;
-	virtual void erase() = 0;
+	virtual void erase();
 	virtual void rotate(const Grid& g) = 0;
-	virtual void moveLeft(const Grid& g) = 0;
-	virtual void moveRight(const Grid& g) = 0;
-	virtual bool moveDown(const Grid& g) = 0;
-	virtual void drop(const Grid& g) = 0;
+	virtual void moveLeft(const Grid& g);
+	virtual void moveRight(const Grid& g);
+	virtual bool moveDown(const Grid& g);
+	virtual void drop(const Grid& g);
 	virtual void updateGrid(Grid&) = 0;
 	virtual bool isClear(const Grid&) = 0;
 	int getX() const { return x; }

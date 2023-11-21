@@ -9,80 +9,80 @@ import CursorBorder;
 // check if the current position touches the right side of the wall
 bool Tetromino::isEndofRight()
 {
-	return (x + width - 1) >= wallWidth;
+    return (x + width - 1) >= wallWidth;
 }
 
 void Tetromino::moveLeft(const Grid& g)
 {
-	if (x == 1) // nothing to do
-		return;
+    if (x == 1) // nothing to do
+        return;
 
-	--x;
+    --x;
 
-	if (!isClear(g))
-	{
-		++x;
-		return;
-	}
+    if (!isClear(g))
+    {
+        ++x;
+        return;
+    }
 
-	++x;
-	erase();
-	--x;
-	draw();
+    ++x;
+    erase();
+    --x;
+    draw();
 }
 
 void Tetromino::moveRight(const Grid& g)
 {
-	if (isEndofRight()) // nothing to do
-		return;
+    if (isEndofRight()) // nothing to do
+        return;
 
-	++x;
+    ++x;
 
-	if (!isClear(g))
-	{
-		--x;
-		return;
-	}
+    if (!isClear(g))
+    {
+        --x;
+        return;
+    }
 
-	--x;
-	erase();
-	++x;
-	draw();
+    --x;
+    erase();
+    ++x;
+    draw();
 }
 
 bool Tetromino::moveDown(const Grid& g)
 {
-	++y;
+    ++y;
 
-	if ((y + height > wallHeight) || !isClear(g))
-	{
-		--y;
-		return false;
-	}
+    if ((y + height > wallHeight) || !isClear(g))
+    {
+        --y;
+        return false;
+    }
 
-	--y;
-	erase();
-	++y;
-	draw();
+    --y;
+    erase();
+    ++y;
+    draw();
 
-	return true;
+    return true;
 }
 
 void Tetromino::drop(const Grid& g)
 {
-	//TetrominoT temp{ *this };
-	erase();
+    //TetrominoT temp{ *this };
+    erase();
 
-	for (++y; (y <= wallHeight - height) && isClear(g); ++y)
-	{
-		//step down until the grid is clear for current position
-	}
+    for (++y; (y <= wallHeight - height) && isClear(g); ++y)
+    {
+        //step down until the grid is clear for current position
+    }
 
-	--y;
-	draw();
+    --y;
+    draw();
 }
 
 void Tetromino::erase()
 {
-	printShape(" ");
+    printShape(" ");
 }

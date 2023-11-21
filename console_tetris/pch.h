@@ -6,5 +6,6 @@
 #include <cstdlib>
 #include <random>
 #include <functional>
+#define NOMINMAX
 #include <Windows.h>
 #include <conio.h>

@@ -143,12 +143,12 @@ int main()
                 if (pause)
                 {
                     gotoxy(1, -1);
-                    std::print("{}", "PAUSED");
+                    std::print("PAUSED");
                 }
                 else
                 {
                     gotoxy(1, -1);
-                    std::print("{}", "      ");
+                    std::print("      ");
                 }
             }
             else if (!pause && (GetAsyncKeyState(VK_UP) & 0x01))
@@ -198,7 +198,7 @@ int main()
     gotoxy(0, wallHeight + 1);
     if (exitGame)
     {
-        std::println("{}", "Game Over");
+        std::println("Game Over");
     }
     while (_kbhit()) _getch(); // clear the keyboard input buffer
 }

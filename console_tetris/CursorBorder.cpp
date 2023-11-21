@@ -18,19 +18,19 @@ void printBorder()
 	for (int i{}; i < wallHeight; ++i)
 	{
 		gotoxy(0, i);
-		std::cout << "\u2551"; // '║'
+		std::print("{}", "\u2551"); // '║'
 		gotoxy(wallWidth + 1, i);
-		std::cout << "\u2551";
+		std::print("{}", "\u2551");
 	}
 	gotoxy(0, wallHeight);
-	std::cout << "\u255A"; // '╚'
+	std::print("{}", "\u255A"); // '╚'
 
 	for (int i{ 1 }; i <= wallWidth; ++i)
-		std::cout << "\u2550"; // '═'
+		std::print("{}", "\u2550"); // '═'
 
-	std::cout << "\u255D"; // '╝'
+	std::print("{}", "\u255D"); // '╝'
 	gotoxy(15, -1);
-	std::cout << "Next";
+	std::print("{}", "Next");
 }
 
 int randomTetromino()

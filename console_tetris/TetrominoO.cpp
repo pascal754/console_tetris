@@ -11,11 +11,11 @@ import Grid;
 void TetrominoO::printShape(const std::string& sym)
 {
 	gotoxy(x, y);
-	std::cout << sym;
-	std::cout << sym;
+	std::print("{}", sym);
+	std::print("{}", sym);
 	gotoxy(x, y + 1);
-	std::cout << sym;
-	std::cout << sym;
+	std::print("{}", sym);
+	std::print("{}", sym);
 }
 
 

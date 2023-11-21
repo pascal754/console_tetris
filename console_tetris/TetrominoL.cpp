@@ -13,37 +13,37 @@ void TetrominoL::printShape(const std::string& sym)
 	if (state == 0)
 	{
 		gotoxy(x, y);
-		std::cout << sym;
+		std::print("{}", sym);
 		gotoxy(x, y + 1);
-		std::cout << sym;
+		std::print("{}", sym);
 		gotoxy(x, y + 2);
-		std::cout << sym;
-		std::cout << sym;
+		std::print("{}", sym);
+		std::print("{}", sym);
 	}
 	else if (state == 1) {
 		gotoxy(x, y);
-		std::cout << sym;
-		std::cout << sym;
-		std::cout << sym;
+		std::print("{}", sym);
+		std::print("{}", sym);
+		std::print("{}", sym);
 		gotoxy(x, y + 1);
-		std::cout << sym;
+		std::print("{}", sym);
 	}
 	else if (state == 2) {
 		gotoxy(x, y);
-		std::cout << sym;
-		std::cout << sym;
+		std::print("{}", sym);
+		std::print("{}", sym);
 		gotoxy(x + 1, y + 1);
-		std::cout << sym;
+		std::print("{}", sym);
 		gotoxy(x + 1, y + 2);
-		std::cout << sym;
+		std::print("{}", sym);
 	}
 	else {
 		gotoxy(x + 2, y);
-		std::cout << sym;
+		std::print("{}", sym);
 		gotoxy(x, y + 1);
-		std::cout << sym;
-		std::cout << sym;
-		std::cout << sym;
+		std::print("{}", sym);
+		std::print("{}", sym);
+		std::print("{}", sym);
 	}
 }
 

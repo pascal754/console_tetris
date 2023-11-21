@@ -143,12 +143,12 @@ int main()
 				if (pause)
 				{
 					gotoxy(1, -1);
-					std::cout << "PAUSED";
+					std::print("{}", "PAUSED");
 				}
 				else
 				{
 					gotoxy(1, -1);
-					std::cout << "      ";
+					std::print("{}", "      ");
 				}
 			}
 			else if (GetAsyncKeyState(VK_UP) & 0x01)
@@ -183,7 +183,7 @@ int main()
 		} //keyboard
 
 		gotoxy(0, 0);
-		std::this_thread::sleep_for(std::chrono::milliseconds(50)); //othersize, cpu usage would be high
+		std::this_thread::sleep_for(std::chrono::milliseconds(50)); //otherwise, cpu usage would be high	s
 		if (!pause)
 		{
 			++count;
@@ -204,7 +204,7 @@ int main()
 	gotoxy(0, wallHeight + 1);
 	if (exitGame)
 	{
-		std::cout << "Game Over" << std::endl;
+		std::println("{}", "Game Over");
 	}
 	while (_kbhit()) _getch(); // clear the keyboard input buffer
 }

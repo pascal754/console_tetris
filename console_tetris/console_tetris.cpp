@@ -178,7 +178,10 @@ int main()
         } //keyboard
 
         gotoxy(0, 0);
-        std::this_thread::sleep_for(std::chrono::milliseconds(50)); //otherwise, cpu usage would be high	s
+
+        //otherwise, cpu usage would be high
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
         if (!pause)
         {
             ++count;

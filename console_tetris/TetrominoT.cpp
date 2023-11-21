@@ -58,7 +58,9 @@ void TetrominoT::rotate(const Grid& g)
 
     if (temp.state == 0)
     {
-        if (!g.isClear(temp.x, temp.y - 1) || !g.isClear(temp.x, temp.y + 1) || !g.isClear(temp.x + 2, temp.y + 1))
+        if (!g.isClear(temp.x, temp.y - 1) ||
+            !g.isClear(temp.x, temp.y + 1) ||
+            !g.isClear(temp.x + 2, temp.y + 1))
             return;
 
         --temp.y;
@@ -67,7 +69,9 @@ void TetrominoT::rotate(const Grid& g)
         temp.height = 3;
     }
     else if (temp.state == 1) {
-        if (!g.isClear(temp.x, temp.y) || !g.isClear(temp.x + 2, temp.y) || !g.isClear(temp.x, temp.y + 2))
+        if (!g.isClear(temp.x, temp.y) ||
+            !g.isClear(temp.x + 2, temp.y) ||
+            !g.isClear(temp.x, temp.y + 2))
             return;
 
         temp.state = 2;
@@ -75,7 +79,9 @@ void TetrominoT::rotate(const Grid& g)
         temp.height = 2;
     }
     else if (temp.state == 2) {
-        if (!g.isClear(temp.x, temp.y) || !g.isClear(temp.x + 2, temp.y) || !g.isClear(temp.x + 2, temp.y + 2))
+        if (!g.isClear(temp.x, temp.y) ||
+            !g.isClear(temp.x + 2, temp.y) ||
+            !g.isClear(temp.x + 2, temp.y + 2))
             return;
 
         ++temp.x;
@@ -84,7 +90,9 @@ void TetrominoT::rotate(const Grid& g)
         temp.height = 3;
     }
     else {
-        if (!g.isClear(temp.x + 1, temp.y) || !g.isClear(temp.x + 1, temp.y + 2) || !g.isClear(temp.x - 1, temp.y + 2))
+        if (!g.isClear(temp.x + 1, temp.y) ||
+            !g.isClear(temp.x + 1, temp.y + 2) ||
+            !g.isClear(temp.x - 1, temp.y + 2))
             return;
 
         --temp.x;

@@ -41,7 +41,10 @@ void TetrominoI::rotate(const Grid& g)
 
     if (temp.state == 0)
     {
-        if (!g.isClear(temp.x + 1, temp.y) || !g.isClear(temp.x + 2, temp.y) || !g.isClear(temp.x - 1, temp.y + 2) || !g.isClear(temp.x - 1, temp.y + 3))
+        if (!g.isClear(temp.x + 1, temp.y) ||
+            !g.isClear(temp.x + 2, temp.y) ||
+            !g.isClear(temp.x - 1, temp.y + 2) ||
+            !g.isClear(temp.x - 1, temp.y + 3))
             return;
 
         --temp.x;
@@ -51,7 +54,10 @@ void TetrominoI::rotate(const Grid& g)
         temp.height = 1;
     }
     else {
-        if (!g.isClear(temp.x, temp.y - 1) || !g.isClear(temp.x + 2, temp.y + 1) || !g.isClear(temp.x + 2, temp.y + 2) || !g.isClear(temp.x + 3, temp.y + 1))
+        if (!g.isClear(temp.x, temp.y - 1) ||
+            !g.isClear(temp.x + 2, temp.y + 1) ||
+            !g.isClear(temp.x + 2, temp.y + 2) ||
+            !g.isClear(temp.x + 3, temp.y + 1))
             return;
 
         ++temp.x;

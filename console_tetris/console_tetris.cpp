@@ -1,5 +1,5 @@
 ﻿// April 27, 2022 by SM
-// Mocking Tetris game in console
+// Tetris game in Windows Terminal
 
 #include <iostream>
 #include <chrono>
@@ -204,7 +204,7 @@ int main()
 					}
 			}
 		}
-		fore =GetForegroundWindow();
+		fore = GetForegroundWindow();
 	}  // while
 
 	gotoxy(0, wallHeight + 1);

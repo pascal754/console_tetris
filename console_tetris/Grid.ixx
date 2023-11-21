@@ -1,4 +1,8 @@
-﻿export module Grid;
+﻿module;
+
+#include "pch.h"
+
+export module Grid;
 
 import CursorBorder;
 

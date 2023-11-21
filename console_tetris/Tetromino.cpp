@@ -1,3 +1,7 @@
+module;
+
+#include "pch.h"
+
 module Tetrominoes; // :Tetromino;
 
 import CursorBorder;

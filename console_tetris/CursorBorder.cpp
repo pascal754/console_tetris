@@ -1,9 +1,6 @@
 ﻿module;
 
-#include <Windows.h>
-#include <iostream>
-#include <random>
-#include <functional>
+#include "pch.h"
 
 module CursorBorder;
 

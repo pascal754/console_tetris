@@ -1,13 +1,7 @@
 ﻿// April 27, 2022 by SM
 // Tetris game in Windows Terminal
 
-#include <iostream>
-#include <chrono>
-#include <thread>
-#include <memory>
-#include <cstdlib>
-#include <Windows.h>
-#include <conio.h>
+#include "pch.h"
 
 import CursorBorder;
 import Grid;

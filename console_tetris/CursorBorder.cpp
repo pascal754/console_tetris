@@ -18,17 +18,17 @@ void printBorder()
 	for (int i{}; i < wallHeight; ++i)
 	{
 		gotoxy(0, i);
-		std::print("{}", "\u2551"); // '║'
+		std::print("{}", "║");
 		gotoxy(wallWidth + 1, i);
-		std::print("{}", "\u2551");
+		std::print("{}", "║");
 	}
 	gotoxy(0, wallHeight);
-	std::print("{}", "\u255A"); // '╚'
+	std::print("{}", "╚");
 
 	for (int i{ 1 }; i <= wallWidth; ++i)
-		std::print("{}", "\u2550"); // '═'
+		std::print("{}", "═");
 
-	std::print("{}", "\u255D"); // '╝'
+	std::print("{}", "╝");
 	gotoxy(15, -1);
 	std::print("{}", "Next");
 }

@@ -5,3 +5,5 @@
 /.vs/console_tetris
 /console_tetris/x64/Debug
 /x64/Debug
+/x64/Release
+/console_tetris/x64/Release

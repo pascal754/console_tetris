@@ -50,7 +50,8 @@ void TetrominoZ::rotate(const Grid& g)
         temp.width = 2;
         temp.height = 3;
     }
-    else {
+    else
+    {
         if (!g.isClear(x + 2, y))
             return;
 
@@ -76,7 +77,8 @@ void TetrominoZ::updateGrid(Grid& g)
         g.set(x + 1, y + 1);
         g.set(x + 2, y + 1);
     }
-    else {
+    else
+    {
         g.set(x + 1, y);
         g.set(x, y + 1);
         g.set(x + 1, y + 1);
@@ -93,7 +95,8 @@ bool TetrominoZ::isClear(const Grid& g)
             g.isClear(x + 1, y + 1) &&
             g.isClear(x + 2, y + 1);
     }
-    else {
+    else
+    {
         return g.isClear(x + 1, y) &&
             g.isClear(x, y + 1) &&
             g.isClear(x + 1, y + 1) &&

@@ -1,11 +1,11 @@
 #pragma once
-#include <print>
 #include <chrono>
-#include <thread>
-#include <memory>
 #include <cstdlib>
-#include <random>
 #include <functional>
+#include <memory>
+#include <print>
+#include <random>
+#include <thread>
 #define NOMINMAX
 #include <Windows.h>
 #include <conio.h>

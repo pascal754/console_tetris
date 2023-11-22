@@ -48,16 +48,19 @@ void Grid::deleteFilledRows()
     while (i > 0)
     {
         bool filled{ grid[1][i] }; //initialize with the first element. Remember grid start from 1
+
         for (int j{ 2 }; j <= wallWidth && filled; ++j)
         {
             filled = filled && grid[j][i];
         }
+
         if (filled)
         {
             removeAndCopyRest(i);
             draw(); // draw grid and start from the same row again
         }
-        else {
+        else
+        {
             --i;
         }
     }

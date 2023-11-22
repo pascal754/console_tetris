@@ -52,7 +52,8 @@ void TetrominoS::rotate(const Grid& g)
         temp.width = 2;
         temp.height = 3;
     }
-    else {
+    else
+    {
         if (!g.isClear(temp.x, temp.y + 2))
             return;
 
@@ -78,7 +79,8 @@ void TetrominoS::updateGrid(Grid& g)
         g.set(x, y + 1);
         g.set(x + 1, y + 1);
     }
-    else {
+    else
+    {
         g.set(x, y);
         g.set(x, y + 1);
         g.set(x + 1, y + 1);
@@ -95,7 +97,8 @@ bool TetrominoS::isClear(const Grid& g)
             g.isClear(x, y + 1) &&
             g.isClear(x + 1, y + 1);
     }
-    else {
+    else
+    {
         return g.isClear(x, y) &&
             g.isClear(x, y + 1) &&
             g.isClear(x + 1, y + 1) &&

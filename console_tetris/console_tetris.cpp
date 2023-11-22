@@ -109,7 +109,6 @@ int main()
     GetWindowRect(console, &ConsoleRect);
     MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 800, 600, TRUE);*/
 
-    system("chcp 65001");
     system("CLS");
 
     printBorder();
@@ -129,6 +128,7 @@ int main()
     bool exitGame{};
     bool pause{};
     HWND fore{ GetForegroundWindow() };
+
     while (true)
     {
         if (myWindow == fore)
@@ -151,29 +151,33 @@ int main()
                     std::print("      ");
                 }
             }
-            else if (!pause && (GetAsyncKeyState(VK_UP) & 0x01))
+            else if (!pause)
             {
-                tObj->rotate(grid);
-            }
-            else if (!pause && (GetAsyncKeyState(VK_LEFT) & 0x01))
-            {
-                tObj->moveLeft(grid);
-            }
-            else if (!pause && (GetAsyncKeyState(VK_RIGHT) & 0x01))
-            {
-                tObj->moveRight(grid);
-            }
-            else if (!pause && (GetAsyncKeyState(VK_DOWN) & 0x01)
-                && !tObj->moveDown(grid) && !freezeTetromino(tObj, tNext, grid))
-            {
-                exitGame = true;
-                break;
-            }
-            else if (!pause && (GetAsyncKeyState(VK_SPACE) & 0x01)
-                && !freezeTetromino(tObj, tNext, grid))
-            {
-                exitGame = true;
-                break;
+                if (GetAsyncKeyState(VK_UP) & 0x01)
+                {
+                    tObj->rotate(grid);
+                }
+                else if (GetAsyncKeyState(VK_LEFT) & 0x01)
+                {
+                    tObj->moveLeft(grid);
+                }
+                else if (GetAsyncKeyState(VK_RIGHT) & 0x01)
+                {
+                    tObj->moveRight(grid);
+                }
+                else if ((GetAsyncKeyState(VK_DOWN) & 0x01)
+                    && !tObj->moveDown(grid)
+                    && !freezeTetromino(tObj, tNext, grid))
+                {
+                    exitGame = true;
+                    break;
+                }
+                else if ((GetAsyncKeyState(VK_SPACE) & 0x01)
+                    && !freezeTetromino(tObj, tNext, grid))
+                {
+                    exitGame = true;
+                    break;
+                }
             }
         } //keyboard
 
@@ -188,20 +192,24 @@ int main()
             if (count == 20)
             {
                 count = 0;
-                if (!tObj->moveDown(grid) && !freezeTetromino(tObj, tNext, grid))
+                if (!tObj->moveDown(grid)
+                    && !freezeTetromino(tObj, tNext, grid))
                 {
                     exitGame = true;
                     break;
                 }
             }
         }
+
         fore = GetForegroundWindow();
-    }  // while
+    } // while
 
     gotoxy(0, wallHeight + 1);
+
     if (exitGame)
     {
         std::println("Game Over");
     }
+
     while (_kbhit()) _getch(); // clear the keyboard input buffer
 }

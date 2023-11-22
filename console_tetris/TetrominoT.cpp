@@ -18,7 +18,8 @@ void TetrominoT::printShape(const std::string& sym)
         gotoxy(x + 1, y + 1);
         std::print("{}", sym);
     }
-    else if (state == 1) {
+    else if (state == 1)
+    {
         gotoxy(x + 1, y);
         std::print("{}", sym);
         gotoxy(x, y + 1);
@@ -27,7 +28,8 @@ void TetrominoT::printShape(const std::string& sym)
         gotoxy(x + 1, y + 2);
         std::print("{}", sym);
     }
-    else if (state == 2) {
+    else if (state == 2)
+    {
         gotoxy(x + 1, y);
         std::print("{}", sym);
         gotoxy(x, y + 1);
@@ -35,7 +37,8 @@ void TetrominoT::printShape(const std::string& sym)
         std::print("{}", sym);
         std::print("{}", sym);
     }
-    else {
+    else
+    {
         gotoxy(x, y);
         std::print("{}", sym);
         gotoxy(x, y + 1);
@@ -68,7 +71,8 @@ void TetrominoT::rotate(const Grid& g)
         temp.width = 2;
         temp.height = 3;
     }
-    else if (temp.state == 1) {
+    else if (temp.state == 1)
+    {
         if (!g.isClear(temp.x, temp.y) ||
             !g.isClear(temp.x + 2, temp.y) ||
             !g.isClear(temp.x, temp.y + 2))
@@ -78,7 +82,8 @@ void TetrominoT::rotate(const Grid& g)
         temp.width = 3;
         temp.height = 2;
     }
-    else if (temp.state == 2) {
+    else if (temp.state == 2)
+    {
         if (!g.isClear(temp.x, temp.y) ||
             !g.isClear(temp.x + 2, temp.y) ||
             !g.isClear(temp.x + 2, temp.y + 2))
@@ -89,7 +94,8 @@ void TetrominoT::rotate(const Grid& g)
         temp.width = 2;
         temp.height = 3;
     }
-    else {
+    else
+    {
         if (!g.isClear(temp.x + 1, temp.y) ||
             !g.isClear(temp.x + 1, temp.y + 2) ||
             !g.isClear(temp.x - 1, temp.y + 2))
@@ -120,19 +126,22 @@ void TetrominoT::updateGrid(Grid& g)
         g.set(x + 2, y);
         g.set(x + 1, y + 1);
     }
-    else if (state == 1) {
+    else if (state == 1)
+    {
         g.set(x + 1, y);
         g.set(x, y + 1);
         g.set(x + 1, y + 1);
         g.set(x + 1, y + 2);
     }
-    else if (state == 2) {
+    else if (state == 2)
+    {
         g.set(x + 1, y);
         g.set(x, y + 1);
         g.set(x + 1, y + 1);
         g.set(x + 2, y + 1);
     }
-    else {
+    else
+    {
         g.set(x, y);
         g.set(x, y + 1);
         g.set(x + 1, y + 1);

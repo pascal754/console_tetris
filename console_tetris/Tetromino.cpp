@@ -70,7 +70,6 @@ bool Tetromino::moveDown(const Grid& g)
 
 void Tetromino::drop(const Grid& g)
 {
-    //TetrominoT temp{ *this };
     erase();
 
     for (++y; (y <= wallHeight - height) && isClear(g); ++y)

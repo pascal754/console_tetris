@@ -32,8 +32,6 @@ void TetrominoI::printShape(const std::string& sym)
 
 void TetrominoI::draw()
 {
-    //printShape("\u2588");
-    //printShape("I");
     printShape(emoji);
 }
 

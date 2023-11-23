@@ -51,8 +51,6 @@ void TetrominoJ::printShape(const std::string& sym)
 
 void TetrominoJ::draw()
 {
-    //printShape("\u2588");
-    //printShape("J");
     printShape(emoji);
 }
 

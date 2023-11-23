@@ -33,8 +33,6 @@ void TetrominoZ::printShape(const std::string& sym)
 
 void TetrominoZ::draw()
 {
-    //printShape("\u2588");
-    //printShape("Z");
     printShape(emoji);
 }
 

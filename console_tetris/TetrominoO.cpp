@@ -20,8 +20,6 @@ void TetrominoO::printShape(const std::string& sym)
 
 void TetrominoO::draw()
 {
-    //printShape("\u2588");
-    //printShape("O");
     printShape(emoji);
 }
 

@@ -53,7 +53,7 @@ void TetrominoT::draw()
 {
     //printShape("\u2588");
     //printShape("T");
-    printShape("🎃");
+    printShape(emoji);
 }
 
 void TetrominoT::rotate(const Grid& g)

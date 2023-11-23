@@ -22,7 +22,7 @@ void TetrominoO::draw()
 {
     //printShape("\u2588");
     //printShape("O");
-    printShape("🎄");
+    printShape(emoji);
 }
 
 void TetrominoO::rotate(const Grid& g)

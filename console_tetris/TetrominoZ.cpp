@@ -35,7 +35,7 @@ void TetrominoZ::draw()
 {
     //printShape("\u2588");
     //printShape("Z");
-    printShape("😺");
+    printShape(emoji);
 }
 
 void TetrominoZ::rotate(const Grid& g)

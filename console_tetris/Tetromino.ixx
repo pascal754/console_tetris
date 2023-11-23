@@ -9,6 +9,7 @@ import Grid;
 export class Tetromino
 {
 public:
+    Tetromino();
     virtual ~Tetromino() = default;
     virtual void draw() = 0;
     virtual void erase();
@@ -37,4 +38,6 @@ protected:
     // width and height of the enclosing box
     int width{};
     int height{};
+
+    std::string emoji;
 };

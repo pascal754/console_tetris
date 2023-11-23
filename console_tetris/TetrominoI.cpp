@@ -34,7 +34,7 @@ void TetrominoI::draw()
 {
     //printShape("\u2588");
     //printShape("I");
-    printShape("😍");
+    printShape(emoji);
 }
 
 void TetrominoI::rotate(const Grid& g)

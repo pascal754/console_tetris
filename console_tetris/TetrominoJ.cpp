@@ -53,7 +53,7 @@ void TetrominoJ::draw()
 {
     //printShape("\u2588");
     //printShape("J");
-    printShape("💟");
+    printShape(emoji);
 }
 
 void TetrominoJ::rotate(const Grid& g)

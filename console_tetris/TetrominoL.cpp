@@ -53,8 +53,7 @@ void TetrominoL::draw()
 {
     //printShape("\u2588");
     //printShape("L");
-    printShape("💟");
-
+    printShape(emoji);
 }
 
 

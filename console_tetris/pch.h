@@ -6,6 +6,7 @@
 #include <print>
 #include <random>
 #include <thread>
+#include <boost/locale.hpp>
 #define NOMINMAX
 #include <Windows.h>
 #include <conio.h>

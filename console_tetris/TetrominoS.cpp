@@ -35,7 +35,7 @@ void TetrominoS::draw()
 {
     //printShape("\u2588");
     //printShape("S"); 
-    printShape("🦃");
+    printShape(emoji);
 }
 
 // 1. test collision

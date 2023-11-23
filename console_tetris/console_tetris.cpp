@@ -99,8 +99,6 @@ void adjustConsoleSize()
 
 int main()
 {
-    auto myWindow{ GetForegroundWindow() };
-
     adjustConsoleSize();
 
     // adjust console size option #2
@@ -126,12 +124,12 @@ int main()
 
     int count{};
     bool exitGame{};
-    bool pause{};
-    HWND fore{ GetForegroundWindow() };
+    bool paused{};
+    auto myWindow{ GetForegroundWindow() };
 
     while (true)
     {
-        if (myWindow == fore)
+        if (auto fore{ GetForegroundWindow() }; myWindow == fore)
         {
             if (GetAsyncKeyState(VK_ESCAPE) & 0x01)
             {
@@ -139,8 +137,8 @@ int main()
             }
             else if (GetAsyncKeyState(0x50) & 0x01) // P Key
             {
-                pause = !pause;
-                if (pause)
+                paused = !paused;
+                if (paused)
                 {
                     gotoxy(1, -1);
                     std::print("PAUSED");
@@ -151,29 +149,39 @@ int main()
                     std::print("      ");
                 }
             }
-            else if (!pause)
+            else if (GetAsyncKeyState(VK_UP) & 0x01)
             {
-                if (GetAsyncKeyState(VK_UP) & 0x01)
+                if (!paused)
                 {
                     tObj->rotate(grid);
                 }
-                else if (GetAsyncKeyState(VK_LEFT) & 0x01)
+            }
+            else if (GetAsyncKeyState(VK_LEFT) & 0x01)
+            {
+                if (!paused)
                 {
                     tObj->moveLeft(grid);
                 }
-                else if (GetAsyncKeyState(VK_RIGHT) & 0x01)
+            }
+            else if (GetAsyncKeyState(VK_RIGHT) & 0x01)
+            {
+                if (!paused)
                 {
                     tObj->moveRight(grid);
                 }
-                else if ((GetAsyncKeyState(VK_DOWN) & 0x01)
-                    && !tObj->moveDown(grid)
+            }
+            else if (GetAsyncKeyState(VK_DOWN) & 0x01)
+            {
+                if (!paused && !tObj->moveDown(grid)
                     && !freezeTetromino(tObj, tNext, grid))
                 {
                     exitGame = true;
                     break;
                 }
-                else if ((GetAsyncKeyState(VK_SPACE) & 0x01)
-                    && !freezeTetromino(tObj, tNext, grid))
+            }
+            else if (GetAsyncKeyState(VK_SPACE) & 0x01)
+            {
+                if (!paused && !freezeTetromino(tObj, tNext, grid))
                 {
                     exitGame = true;
                     break;
@@ -186,7 +194,7 @@ int main()
         //otherwise, cpu usage would be high
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
-        if (!pause)
+        if (!paused)
         {
             ++count;
             if (count == 20)
@@ -200,8 +208,6 @@ int main()
                 }
             }
         }
-
-        fore = GetForegroundWindow();
     } // while
 
     gotoxy(0, wallHeight + 1);

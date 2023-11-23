@@ -34,9 +34,9 @@ void Grid::draw()
         {
             gotoxy(i, j);
             if (grid[i][j])
-                std::print("█");
+                std::print("██");
             else
-                std::print(" ");
+                std::print("  ");
 
         }
 }

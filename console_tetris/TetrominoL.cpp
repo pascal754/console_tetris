@@ -52,8 +52,8 @@ void TetrominoL::printShape(const std::string& sym)
 void TetrominoL::draw()
 {
     //printShape("\u2588");
-    printShape("L");
-    //printShape("💟");
+    //printShape("L");
+    printShape("💟");
 
 }
 
@@ -108,7 +108,7 @@ void TetrominoL::rotate(const Grid& g)
         return;
 
     erase();
-    *this = temp;
+    *this = std::move(temp);
     draw();
 }
 

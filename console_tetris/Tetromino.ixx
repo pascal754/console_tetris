@@ -25,12 +25,12 @@ public:
     void setY(int cy) { y = cy; }
 
 protected:
-    virtual bool isEndofRight();
+    virtual bool isRightEnd();
     virtual void printShape(const std::string& sym) = 0;
 
     int state{}; // rotation state, initialized with 0 (default state)
 
-    // x, y: coordinate of top left corner of the box enclosing a tetromino
+    // x, y: coordinate of the top left corner of a box enclosing a tetromino
     int x{};
     int y{};
 

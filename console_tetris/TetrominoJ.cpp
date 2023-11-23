@@ -19,7 +19,8 @@ void TetrominoJ::printShape(const std::string& sym)
         std::print("{}", sym);
         std::print("{}", sym);
     }
-    else if (state == 1) {
+    else if (state == 1)
+    {
         gotoxy(x, y);
         std::print("{}", sym);
         gotoxy(x, y + 1);
@@ -27,7 +28,8 @@ void TetrominoJ::printShape(const std::string& sym)
         std::print("{}", sym);
         std::print("{}", sym);
     }
-    else if (state == 2) {
+    else if (state == 2)
+    {
         gotoxy(x, y);
         std::print("{}", sym);
         std::print("{}", sym);
@@ -50,8 +52,8 @@ void TetrominoJ::printShape(const std::string& sym)
 void TetrominoJ::draw()
 {
     //printShape("\u2588");
-    printShape("J");
-    //printShape("\U0001F49F"); // 💟
+    //printShape("J");
+    printShape("💟");
 }
 
 void TetrominoJ::rotate(const Grid& g)
@@ -67,7 +69,8 @@ void TetrominoJ::rotate(const Grid& g)
         temp.width = 3;
         temp.height = 2;
     }
-    else if (temp.state == 1) {
+    else if (temp.state == 1)
+    {
         if (!g.isClear(temp.x + 2, temp.y + 2))
             return;
 
@@ -103,7 +106,7 @@ void TetrominoJ::rotate(const Grid& g)
         return;
 
     erase();
-    *this = temp;
+    *this = std::move(temp);
     draw();
 }
 

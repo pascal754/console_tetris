@@ -33,7 +33,8 @@ void TetrominoI::printShape(const std::string& sym)
 void TetrominoI::draw()
 {
     //printShape("\u2588");
-    printShape("I");
+    //printShape("I");
+    printShape("😍");
 }
 
 void TetrominoI::rotate(const Grid& g)
@@ -74,7 +75,7 @@ void TetrominoI::rotate(const Grid& g)
         return;
 
     erase();
-    *this = temp;
+    *this = std::move(temp);
     draw();
 }
 
@@ -99,13 +100,17 @@ void TetrominoI::updateGrid(Grid& g)
 bool TetrominoI::isClear(const Grid& g)
 {
     if (state == 0)
+    {
         return g.isClear(x, y) &&
-        g.isClear(x, y + 1) &&
-        g.isClear(x, y + 2) &&
-        g.isClear(x, y + 3);
+            g.isClear(x, y + 1) &&
+            g.isClear(x, y + 2) &&
+            g.isClear(x, y + 3);
+    }
     else
+    {
         return g.isClear(x, y) &&
-        g.isClear(x + 1, y) &&
-        g.isClear(x + 2, y) &&
-        g.isClear(x + 3, y);
+            g.isClear(x + 1, y) &&
+            g.isClear(x + 2, y) &&
+            g.isClear(x + 3, y);
+    }
 }

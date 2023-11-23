@@ -34,7 +34,8 @@ void TetrominoS::printShape(const std::string& sym)
 void TetrominoS::draw()
 {
     //printShape("\u2588");
-    printShape("S");
+    //printShape("S"); 
+    printShape("🦃");
 }
 
 // 1. test collision
@@ -66,7 +67,7 @@ void TetrominoS::rotate(const Grid& g)
         return;
 
     erase();
-    *this = temp;
+    *this = std::move(temp);
     draw();
 }
 

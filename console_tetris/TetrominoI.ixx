@@ -8,12 +8,12 @@ import :Tetromino;
 
 // state 0
 // I
-// I
+//(I) // center
 // I
 // I
 
 // state 1
-// IIII
+// I(I)II
 
 export class TetrominoI : public Tetromino
 {

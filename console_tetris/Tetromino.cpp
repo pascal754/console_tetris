@@ -7,7 +7,7 @@ module Tetrominoes; // :Tetromino;
 import CursorBorder;
 
 // check if the current position touches the right side of the wall
-bool Tetromino::isEndofRight()
+bool Tetromino::isRightEnd()
 {
     return (x + width - 1) >= wallWidth;
 }
@@ -33,7 +33,7 @@ void Tetromino::moveLeft(const Grid& g)
 
 void Tetromino::moveRight(const Grid& g)
 {
-    if (isEndofRight()) // nothing to do
+    if (isRightEnd()) // nothing to do
         return;
 
     ++x;
@@ -83,5 +83,5 @@ void Tetromino::drop(const Grid& g)
 
 void Tetromino::erase()
 {
-    printShape(" ");
+    printShape("  ");
 }

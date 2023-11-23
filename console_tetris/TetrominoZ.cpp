@@ -34,7 +34,8 @@ void TetrominoZ::printShape(const std::string& sym)
 void TetrominoZ::draw()
 {
     //printShape("\u2588");
-    printShape("Z");
+    //printShape("Z");
+    printShape("😺");
 }
 
 void TetrominoZ::rotate(const Grid& g)
@@ -64,7 +65,7 @@ void TetrominoZ::rotate(const Grid& g)
         return;
 
     erase();
-    *this = temp;
+    *this = std::move(temp);
     draw();
 }
 

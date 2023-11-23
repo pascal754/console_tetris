@@ -4,6 +4,8 @@
 
 module CursorBorder;
 
+import Random;
+
 void gotoxy(int x, int y)
 {
     COORD coord;
@@ -34,16 +36,5 @@ void printBorder()
 
 int randomTetromino()
 {
-    //random number generation option #1
-    //std::random_device seeder; // True random number generator to obtain a seed (slow)
-    //std::default_random_engine generator{ seeder() }; // Efficient pseudo-random generator
-    //std::uniform_int_distribution distribution{ 1, 2 }; // Generate in [0, max) interval
-    //return std::bind(distribution, generator);
-
-    //random number generation option #2
-    std::random_device rd;  //Will be used to obtain a seed for the random number engine
-    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
-    std::uniform_int_distribution<> distrib(1, 7);
-
-    return distrib(gen);
+    return getRandomInt(1, 7);
 }

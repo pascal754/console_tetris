@@ -12,5 +12,4 @@ export
     extern const int wallHeight{ 20 };
     void gotoxy(int x, int y);
     void printBorder();
-    int randomTetromino();
 }

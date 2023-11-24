@@ -151,7 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="console_tetris.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="CursorBorder.cpp" />
     <ClCompile Include="CursorBorder.ixx" />
     <ClCompile Include="Grid.cpp" />

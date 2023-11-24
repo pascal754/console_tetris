@@ -33,8 +33,3 @@ void printBorder()
     gotoxy(15, -1);
     std::print("Next");
 }
-
-int randomTetromino()
-{
-    return getRandomInt(1, 7);
-}

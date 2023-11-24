@@ -48,7 +48,7 @@
     <ClCompile Include="TetrominoZ.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="console_tetris.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CursorBorder.cpp">

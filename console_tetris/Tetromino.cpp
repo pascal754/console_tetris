@@ -9,7 +9,7 @@ import Random;
 
 Tetromino::Tetromino()
 {
-    auto codepoint{ getRandomInt(0x1F354, 0x1F37A) };
+    auto codepoint{ getRandomNumE() };
 
     emoji = boost::locale::conv::utf_to_utf<char>(&codepoint, &codepoint + 1);
 }
@@ -96,5 +96,5 @@ void Tetromino::draw()
 
 void Tetromino::erase()
 {
-    printShape("  ");
+    printShape("  "); // Emoji occupies two columns.
 }

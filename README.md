@@ -9,7 +9,7 @@
 - Up arrow: Rotate 90 degrees clockwise
 - Down arrow: Move down
 - Spacebar: Drop
-- P: Pause the game
+- P: Pause/Resume the game
 - Esc: Quit the game
 
 ## Development Tool

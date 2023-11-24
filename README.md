@@ -2,13 +2,15 @@
 
 ## Simple Tetris game in Windows Terminal
 
-- Left arrow key: move left
-- Right arrow key: move right
-- Up arrow key: rotate clockwise
-- Down arrow key: move down
-- Space: drop
-- P: pause the game
-- Esc: quit the game
+## Keyboard Controls
+
+- Left arrow: Move left
+- Right arrow: Move right
+- Up arrow: Rotate 90 degrees clockwise
+- Down arrow: Move down
+- Spacebar: Drop
+- P: Pause the game
+- Esc: Quit the game
 
 ## Development Tool
 

@@ -9,7 +9,7 @@ import Random;
 void gotoxy(int x, int y)
 {
     COORD coord;
-    coord.X = startX + 2 * x;
+    coord.X = startX + 2 * x; // Emoji occupies two columns.
     coord.Y = startY + y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }

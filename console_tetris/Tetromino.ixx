@@ -11,7 +11,7 @@ export class Tetromino
 public:
     Tetromino();
     virtual ~Tetromino() = default;
-    virtual void draw() = 0;
+    virtual void draw();
     virtual void erase();
     virtual void rotate(const Grid& g) = 0;
     virtual void moveLeft(const Grid& g);

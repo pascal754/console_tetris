@@ -29,7 +29,6 @@ export class TetrominoT : public Tetromino
 public:
     TetrominoT() { state = 0; x = 1; y = 0; width = 3; height = 2; }
     TetrominoT(int cx, int cy) : TetrominoT() { x = cx; y = cy; }
-    virtual void draw() override;
     virtual void rotate(const Grid& g) override;
     virtual void updateGrid(Grid&) override;
 

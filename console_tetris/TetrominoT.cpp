@@ -49,11 +49,6 @@ void TetrominoT::printShape(const std::string& sym)
     }
 }
 
-void TetrominoT::draw()
-{
-    printShape(emoji);
-}
-
 void TetrominoT::rotate(const Grid& g)
 {
     TetrominoT temp{ *this };

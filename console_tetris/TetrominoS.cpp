@@ -30,12 +30,6 @@ void TetrominoS::printShape(const std::string& sym)
     }
 }
 
-
-void TetrominoS::draw()
-{
-    printShape(emoji);
-}
-
 // 1. test collision
 // 2. erase the current shape, set roatation state, and redraw
 void TetrominoS::rotate(const Grid& g)

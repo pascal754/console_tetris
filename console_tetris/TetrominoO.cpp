@@ -17,12 +17,6 @@ void TetrominoO::printShape(const std::string& sym)
     std::print("{}", sym);
 }
 
-
-void TetrominoO::draw()
-{
-    printShape(emoji);
-}
-
 void TetrominoO::rotate(const Grid& g)
 {
 }

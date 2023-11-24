@@ -89,6 +89,11 @@ void Tetromino::drop(const Grid& g)
     draw();
 }
 
+void Tetromino::draw()
+{
+    printShape(emoji);
+}
+
 void Tetromino::erase()
 {
     printShape("  ");

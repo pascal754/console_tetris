@@ -4,6 +4,7 @@
 
 export module Tetrominoes:TetrominoO;
 
+import std;
 import :Tetromino;
 
 // state 0

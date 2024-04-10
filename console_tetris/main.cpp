@@ -1,8 +1,13 @@
 ﻿// April 27, 2022 by SM
 // Tetris game in Windows Terminal
 
+// April 10, 2024
+// use import std;
+// IntelliSense seems to work
+
 #include "pch.h"
 
+import std;
 import CursorBorder;
 import Grid;
 import Tetrominoes;

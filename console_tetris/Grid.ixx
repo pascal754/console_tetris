@@ -20,4 +20,3 @@ private:
     // flase: clear
     bool grid[wallWidth + 1][wallHeight]; // width + 1 for convenience
 };
-

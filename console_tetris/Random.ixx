@@ -4,6 +4,8 @@ module;
 
 export module Random;
 
+import std;
+
 //random number generation option #1
 //std::random_device seeder; // True random number generator to obtain a seed (slow)
 //std::default_random_engine generator{ seeder() }; // Efficient pseudo-random generator

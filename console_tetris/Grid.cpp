@@ -4,6 +4,7 @@
 
 module Grid;
 
+import std;
 import CursorBorder;
 
 void Grid::update()

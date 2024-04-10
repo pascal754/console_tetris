@@ -4,6 +4,7 @@
 
 module CursorBorder;
 
+import std;
 import Random;
 
 void gotoxy(int x, int y)
